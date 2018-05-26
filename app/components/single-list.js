@@ -7,6 +7,10 @@ export default Component.extend({
     },
     submit (list) {
       this.sendAction('submit', this.get('list'))
+    },
+    addNewTodo (todo) {
+      console.log('single list level', todo)
+      this.sendAction('addNewTodo', todo)
     }
   }
 })

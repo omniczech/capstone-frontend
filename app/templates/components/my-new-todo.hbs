@@ -1,0 +1,8 @@
+{{#if addingNew}}
+  {{input type="text" placeholder="New todo title" value=title}}
+  {{input type="text" placeholder="New todo details" value=details}}
+  <button class="btn btn-success" {{action 'addNewTodo'}}>Add Todo</button>
+  <button class="btn btn-danger" {{action 'cancel'}}>Cancel</button>
+{{else}}
+  <h3 {{action 'showAddTodo'}}>+ Add a new todo</h3>
+{{/if}}

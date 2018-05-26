@@ -41,6 +41,21 @@ export default Route.extend({
         .then(() => this.set('editing', false))
         .then(() => this.get('flashMessages').success('Edited!'))
         .catch(() => this.get('flashMessages').danger('Edit failed'))
+    },
+    addNewTodo (todo) {
+      console.log('route level:', todo)
+      todo.save()
+          .then(() => {
+            todo.set('addingNew', false)
+          })
+          .then(() => {
+            this.get('flashMessages')
+              .success('You made a Todo!')
+          })
+          .catch(() => {
+            this.get('flashMessages')
+              .danger('There was a problem. Please try again.')
+          })
     }
   }
 })

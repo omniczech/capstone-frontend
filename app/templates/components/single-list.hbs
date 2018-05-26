@@ -4,5 +4,6 @@
   {{#each list.todos as |todo|}}
     {{single-todo todo=todo}}
   {{/each}}
+  {{my-new-todo list=list store=store addNewTodo='addNewTodo'}}
   {{delete-list deleteList='deleteList' list=list}}
 </div>

@@ -1,14 +1,5 @@
 {{!-- {{model}} --}}
 {{my-new-list newList=model.newList addNewList='addNewList'}}
 {{#each model.list as |list|}}
-  {{single-list list=list deleteList='deleteList'}}
-  {{!-- <div class="list">
-    <h3>List title: {{list.title}}</h3>
-    {{#each list.todos as |todo|}}
-      {{single-todo todo=todo}}
-    {{/each}}
-    {{delete-list deleteList='deleteList' list=list}}
-  </div> --}}
+  {{single-list list=list deleteList='deleteList' submit='submit'}}
 {{/each}}
-
-{{outlet}}

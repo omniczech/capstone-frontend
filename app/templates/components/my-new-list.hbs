@@ -1,0 +1,7 @@
+{{#if addingNew}}
+  {{input type="text" placeholder="New List title" value=title}}
+  <button class="btn btn-success" {{action 'addNewList'}}>Add list</button>
+  <button class="btn btn-danger" {{action 'cancel'}}>Cancel</button>
+{{else}}
+  <h3 {{action 'showAddList'}}>+ Add a new list</h3>
+{{/if}}

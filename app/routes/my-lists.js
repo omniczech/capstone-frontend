@@ -9,12 +9,12 @@ export default Route.extend({
   model () {
     // return this.get('user')
     return Ember.RSVP.hash({
-      list: this.store.findAll('list'),
+      lister: this.store.findAll('list'),
       filteredList: this.store.findAll('list')
                .then(results => results.filter((list) => {
                  return list.get('user_id') === this.get('user')
-               })),
-      newList: this.get('store').createRecord('list', {})
+               }))
+      // newList: this.get('store').createRecord('list', {})
     })
   },
   actions: {

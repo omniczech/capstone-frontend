@@ -1,13 +1,14 @@
 {{!-- {{model}} --}}
 {{my-new-list newList=model.newList addNewList='addNewList'}}
-{{#each model.filteredList as |list|}}
-  <div class="list">
+{{#each model.list as |list|}}
+  {{single-list list=list deleteList='deleteList'}}
+  {{!-- <div class="list">
     <h3>List title: {{list.title}}</h3>
     {{#each list.todos as |todo|}}
       {{single-todo todo=todo}}
     {{/each}}
-    {{delete-list}}
-  </div>
+    {{delete-list deleteList='deleteList' list=list}}
+  </div> --}}
 {{/each}}
 
 {{outlet}}

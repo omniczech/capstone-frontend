@@ -46,9 +46,9 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/<name-of-git-repo>'
+    ENV.rootURL = '/capstone-frontend'
     ENV.locationType = 'hash'
-    ENV.apiHost = '<deployed api url>'
+    ENV.apiHost = 'http://quiet-gorge-19484.herokuapp.com/'
   }
 
   return ENV

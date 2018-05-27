@@ -12,7 +12,10 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/omniczech/capstone-frontend.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },

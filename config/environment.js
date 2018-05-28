@@ -48,7 +48,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.rootURL = '/capstone-frontend'
     ENV.locationType = 'hash'
-    ENV.apiHost = 'https://quiet-gorge-19484.herokuapp.com/'
+    ENV.apiHost = 'https://quiet-gorge-19484.herokuapp.com'
   }
 
   return ENV

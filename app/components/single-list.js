@@ -11,6 +11,13 @@ export default Component.extend({
     addNewTodo (todo) {
       console.log('single list level', todo)
       this.sendAction('addNewTodo', todo)
+    },
+    todoDone (todo) {
+      console.log('single list', todo)
+      this.sendAction('todoDone', todo)
+    },
+    deleteTodo (todo) {
+      return this.sendAction('deleteTodo', this.get('todo'))
     }
   }
 })

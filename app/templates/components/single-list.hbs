@@ -2,8 +2,13 @@
   {{!-- <h3>List title: {{list.title}}</h3> --}}
   {{editable-title list=list submit='submit'}}
   {{#each list.todos as |todo|}}
-    {{single-todo todo=todo}}
+    {{single-todo todo=todo todoDone='todoDone' deleteTodo='deleteTodo'}}
   {{/each}}
+  {{#if list.isEmpty}}
+    <p>This list is empty! Click below to start adding todos</p>
+  {{/if}}
   {{my-new-todo list=list store=store addNewTodo='addNewTodo'}}
-  {{delete-list deleteList='deleteList' list=list}}
+  {{#if list.isEmpty}}
+    {{delete-list deleteList='deleteList' list=list}}
+  {{/if}}
 </div>

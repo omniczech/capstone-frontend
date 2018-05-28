@@ -1,4 +1,9 @@
-<p>Title: {{todo.title}}</p>
-<p>Details: {{todo.details}}</p>
-<p>Done?: {{todo.done}}</p>
+<div {{action 'todoDone'}}>
+  <p>Title: {{todo.title}}</p>
+  <p>Details: {{todo.details}}</p>
+</div>
+{{#if todo.done}}
+  <button class="btn btn-danger" {{action "deleteTodo"}}>Delete this todo</button>
+{{/if}}
+{{!-- <p>Done?: {{todo.done}}</p> --}}
 <hr>

@@ -13,7 +13,8 @@ export default Route.extend({
       filteredList: this.store.findAll('list')
                .then(results => results.filter((list) => {
                  return list.get('user_id') === this.get('user')
-               }))
+               })),
+      todoer: this.store.findAll('todo')
       // newList: this.get('store').createRecord('list', {})
     })
   },
@@ -56,6 +57,11 @@ export default Route.extend({
             this.get('flashMessages')
               .danger('There was a problem. Please try again.')
           })
+    },
+    todoDone (todo) {
+      console.log(todo.get('done'))
+      todo.toggleProperty('done')
+      todo.save()
     }
   }
 })

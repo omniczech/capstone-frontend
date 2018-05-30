@@ -1,6 +1,7 @@
 <div class="list">
   {{!-- <h3>List title: {{list.title}}</h3> --}}
   {{editable-title list=list submit='submit'}}
+  <hr />
   {{#each list.todos as |todo|}}
     {{single-todo todo=todo todoDone='todoDone' deleteTodo='deleteTodo'}}
   {{/each}}

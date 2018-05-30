@@ -62,6 +62,25 @@ export default Route.extend({
       console.log(todo.get('done'))
       todo.toggleProperty('done')
       todo.save()
+        .then(() => {
+          this.get('flashMessages')
+            .success('You finished a Todo!')
+        })
+        .catch(() => {
+          this.get('flashMessages')
+            .danger('There was a problem. Please try again.')
+        })
+    },
+    deleteTodo (todo) {
+      todo.destroyRecord()
+        .then(() => {
+          this.get('flashMessages')
+            .success('You deleted a Todo!')
+        })
+        .catch(() => {
+          this.get('flashMessages')
+            .danger('There was a problem. Please try again.')
+        })
     }
   }
 })

@@ -1,9 +1,15 @@
-<div {{action 'todoDone'}}>
-  <p>Title: {{todo.title}}</p>
-  <p>Details: {{todo.details}}</p>
+<div style="float:left; max-width:10%; margin-right:10px;">
+  {{#if todo.done}}
+    <h4 {{action 'todoDone'}} style="display:inline;">&#10004;</h4>
+  {{else}}
+    <h4 {{action 'todoDone'}} style="display:inline;">&#9744;</h4>
+  {{/if}}
 </div>
-{{#if todo.done}}
-  <button class="btn btn-danger" {{action "deleteTodo"}}>Delete this todo</button>
-{{/if}}
+<div style="float:left; max-width:90%">
+  <h4 class='crossable' style="display:inline;">{{todo.title}}</h4> <br>
+  <p class='crossable' style="display:inline;">Details: {{todo.details}}</p>
+</div>
+<button class="btn btn-danger" style="float:right;" {{action "deleteTodo"}}>&#10006;</button>
+<div class="clearfix"></div>
 {{!-- <p>Done?: {{todo.done}}</p> --}}
 <hr>

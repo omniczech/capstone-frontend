@@ -3,5 +3,5 @@
   <button class="btn btn-success" {{action 'submit'}}>Save list</button>
   <button class="btn btn-danger" {{action 'cancel'}}>Cancel</button>
 {{else}}
-  <h3 {{action 'showEditing'}}>List title: {{list.title}}</h3>
+  <h3 {{action 'showEditing'}}>{{list.title}}</h3>
 {{/if}}

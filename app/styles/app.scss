@@ -1,10 +1,29 @@
 @import "ember-bootstrap/bootstrap";
 
 .list {
+  margin-top: 15px;
   border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 10px;
 }
 
-.completed {
+.completed .crossable {
   text-decoration: line-through;
+}
+
+h4 {
+  cursor: pointer;
+  margin-top: 0;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.flash-message {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 1px 1px 4px #aaa;
 }

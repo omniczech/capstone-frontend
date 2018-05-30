@@ -17,7 +17,7 @@ export default Component.extend({
       this.sendAction('todoDone', todo)
     },
     deleteTodo (todo) {
-      return this.sendAction('deleteTodo', this.get('todo'))
+      return this.sendAction('deleteTodo', todo)
     }
   }
 })

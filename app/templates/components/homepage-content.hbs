@@ -1,0 +1,8 @@
+{{#if isAuthenticated}}
+<p>You're already signed in. Click the link below to see your lists.</p>
+<p>{{#link-to 'my-lists'}}<button class="btn btn-primary">My Lists</button>{{/link-to}}</p>
+{{else}}
+<p>TskTrckr is a barebones todo list application. You'll be able to maintain any number of lists with any number of todos on those lists. When you're done with an item, simply check a box and it'll be crossed out.</p>
+<p>Click one of the links below to get started or sign in if you're already a user</p>
+<p>{{#link-to 'sign-up'}}<button class="btn btn-primary">Sign up</button>{{/link-to}} {{#link-to 'sign-in'}}<button class="btn btn-primary">Sign in</button>{{/link-to}}</p>
+{{/if}}

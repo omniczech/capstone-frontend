@@ -65,7 +65,7 @@ export default Route.extend({
       todo.save()
         .then(() => {
           this.get('flashMessages')
-            .success('You finished a Todo!')
+            .success('You updated a Todo!')
         })
         .catch(() => {
           this.get('flashMessages')

@@ -9,6 +9,7 @@ export default Route.extend({
   model () {
     // return this.get('user')
     return Ember.RSVP.hash({
+      user_lists: this.store.findRecord('user', this.get('user')),
       lister: this.store.findAll('list'),
       filteredList: this.store.findAll('list')
                .then(results => results.filter((list) => {

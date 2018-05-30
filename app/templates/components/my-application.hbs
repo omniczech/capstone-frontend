@@ -24,10 +24,10 @@
 
 <div class="col-md-8 col-md-offset-2">
 <h1>Welcome to TskTrckr!</h1>
-
+<div class="floater">
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
-
+</div>
   {{outlet}}
 </div>

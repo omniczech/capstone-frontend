@@ -20,10 +20,13 @@ input {
   margin-bottom: 10px;
 }
 
-.flash-message {
+.floater {
   position: fixed;
   bottom: 30px;
   width: 100%;
   text-align: center;
+}
+
+.flash-message {
   box-shadow: 1px 1px 4px #aaa;
 }

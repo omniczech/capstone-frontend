@@ -1,5 +1,5 @@
 {{!-- {{model}} --}}
 {{my-new-list store=store addNewList='addNewList'}}
-{{#each model.lister as |list|}}
+{{#each model.user_lists.lists as |list|}}
   {{single-list list=list store=store deleteList='deleteList' submit='submit' addNewTodo='addNewTodo' todoDone='todoDone' deleteTodo='deleteTodo'}}
 {{/each}}

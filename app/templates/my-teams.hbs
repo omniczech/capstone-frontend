@@ -1,0 +1,7 @@
+<h3>My Teams</h3>
+{{model}}
+{{new-team store=store createTeam='createTeam'}}
+{{log model.userteams}}
+{{#each model.userteams as |userteam|}}
+  <p>{{userteam.team.teamName}}</p>
+{{/each}}

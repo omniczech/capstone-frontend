@@ -11,6 +11,7 @@ Router.map(function () {
   this.route('sign-in')
   this.route('change-password')
   this.route('my-lists');
+  this.route('my-teams');
 })
 
 export default Router

@@ -1,8 +1,10 @@
 {{#if addingNew}}
+<form {{action 'addNewTodo' on='submit'}}>
   {{input type="text" placeholder="New todo title" value=title required=true}}
   {{input type="text" placeholder="New todo details" value=details required=true}}
-  <button class="btn btn-success" {{action 'addNewTodo'}}>Add Todo</button>
+  <button class="btn btn-success" type="submit">Add Todo</button>
   <button class="btn btn-danger" {{action 'cancel'}}>Cancel</button>
+</form>
 {{else}}
   <button class="btn btn-success" {{action 'showAddTodo'}}>Add a new todo</button>
 {{/if}}

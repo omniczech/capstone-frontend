@@ -41,4 +41,5 @@ During this process I began to work on the functionality to allow users to creat
 
 1. Fork and clone this Repo
 2. Navigate to the repo and `npm install` to install dependencies
-3. Run `grunt serve` and go to localhost:4741 in your browser.
+3. Run `grunt serve` and go to localhost:7165 in your browser.
+4. Follow instructions on the API linked in this repo.

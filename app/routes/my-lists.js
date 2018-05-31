@@ -51,6 +51,7 @@ export default Route.extend({
           .then(() => {
             console.log('first then')
             todo.set('addingNew', false)
+            todo.set('newTodo', {})
           })
           .then(() => {
             this.get('flashMessages')

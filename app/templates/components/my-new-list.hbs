@@ -1,6 +1,6 @@
 {{#if addingNew}}
 <form {{action 'addNewList' on='submit'}}>
-  {{input type="text" placeholder="New List title" value=title}}
+  {{input type="text" placeholder="New List title" value=title required=true}}
   <button class="btn btn-success">Add list</button>
   <button class="btn btn-danger" {{action 'cancel'}}>Cancel</button>
 </form>

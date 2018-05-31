@@ -9,6 +9,7 @@ export default Component.extend({
     },
     cancel () {
       this.toggleProperty('addingNew')
+      this.set('title', '')
     },
     addNewList () {
       this.set('newList', this.get('store').createRecord('list', {}))
@@ -16,6 +17,7 @@ export default Component.extend({
       this.set('addingNew', false)
       console.log(this.get('title'))
       this.sendAction('addNewList', this.get('newList'))
+      this.set('title', '')
     }
   }
 })

@@ -1,6 +1,8 @@
 import Component from '@ember/component'
+import { alias } from '@ember/object/computed'
 
 export default Component.extend({
+  // newTitle: alias('list.title'),
   editing: false,
   actions: {
     showEditing () {
@@ -8,9 +10,10 @@ export default Component.extend({
     },
     cancel () {
       this.toggleProperty('editing')
+      this.set('newTitle', '')
     },
     submit () {
-      this.set('list.title', this.get('list.title'))
+      this.set('list.title', this.get('newTitle'))
       // this.sendAction('submit', this.get('list'))
       this.get('list').save()
         .then(() => this.set('editing', false))

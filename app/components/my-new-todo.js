@@ -11,6 +11,8 @@ export default Component.extend({
     },
     cancel () {
       this.toggleProperty('addingNew')
+      this.set('title', '')
+      this.set('details', '')
     },
     addNewTodo () {
       this.set('newTodo', this.get('store').createRecord('todo', {}))
@@ -21,6 +23,8 @@ export default Component.extend({
       this.set('addingNew', false)
       console.log(this.get('newTodo'))
       this.sendAction('addNewTodo', this.get('newTodo'))
+      this.set('title', '')
+      this.set('details', '')
     }
   }
 })

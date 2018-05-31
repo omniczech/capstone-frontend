@@ -21,7 +21,7 @@ export default Route.extend({
   },
   actions: {
     addNewList (list) {
-      console.log('route level:', list.get('title'))
+      console.log('route level:', list)
       list.save()
           .then(() => {
             list.set('addingNew', false)

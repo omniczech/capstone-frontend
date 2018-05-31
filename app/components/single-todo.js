@@ -2,6 +2,7 @@ import Component from '@ember/component'
 import { alias } from '@ember/object/computed'
 
 export default Component.extend({
+  classNames: 'single-todo',
   classNameBindings: ['completed'],
   completed: alias('todo.done'),
   actions: {

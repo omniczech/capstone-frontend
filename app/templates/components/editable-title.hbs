@@ -1,7 +1,9 @@
 {{#if editing}}
-  {{input type="text" placeholder="New List title" value=newTitle}}
-  <button class="btn btn-success" {{action 'submit'}}>Save list</button>
+<form {{action 'submit' on='submit'}}>
+  {{input type="text" placeholder="New List title" value=newTitle required=true}}
+  <button class="btn btn-success" type="submit">Save list</button>
   <button class="btn btn-danger" {{action 'cancel'}}>Cancel</button>
+</form>
 {{else}}
   <h3 {{action 'showEditing'}} class="editable">{{list.title}}</h3>
 {{/if}}

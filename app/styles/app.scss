@@ -4,7 +4,35 @@
   margin-top: 15px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 10px 10px 40px;
+  background-color: #fff;
+  background-image:
+    -webkit-linear-gradient(0deg, transparent 32px, rgba(255, 0, 0, 0.1) 0, transparent 34px),
+    -webkit-linear-gradient(rgba(0, 0, 255, 0.05) 1px, transparent 0);
+  // background-image:
+  //   -moz-linear-gradient(0deg, transparent 5em, rgba(255, 0, 0, 0.2) 0, transparent 5.1em),
+  //   -moz-linear-gradient(rgba(0, 0, 255, 0.3) 1px, transparent 0);
+  // background-image:
+  //   -o-linear-gradient(0deg, transparent 5em, rgba(255, 0, 0, 0.2) 0, transparent 5.1em),
+  //   -o-linear-gradient(rgba(0, 0, 255, 0.3) 1px, transparent 0);
+  // background-image:
+  //   -ms-linear-gradient(0deg, transparent 5em, rgba(255, 0, 0, 0.2) 0, transparent 5.1em),
+    // -ms-linear-gradient(rgba(0, 0, 255, 0.3) 1px, transparent 0);
+  -webkit-background-size: 100% 1em;
+  -moz-background-size: 100% 1em;
+
+  hr {
+    background: transparent;
+    border: none;
+  }
+
+  &:last-of-type {
+    margin-bottom: 30px
+  }
+}
+
+.single-todo {
+  margin-left: -32px;
 }
 
 .completed .crossable {
@@ -33,6 +61,8 @@ input {
 .floater {
   position: fixed;
   bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
 }
 

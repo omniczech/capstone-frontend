@@ -15,7 +15,7 @@ export default Component.extend({
       this.set('newList', this.get('store').createRecord('list', {}))
       this.set('newList.title', this.get('title'))
       this.set('addingNew', false)
-      console.log(this.get('title'))
+      console.log(this.get('newList'))
       this.sendAction('addNewList', this.get('newList'))
       this.set('title', '')
     }

@@ -2,7 +2,7 @@ import Component from '@ember/component'
 
 export default Component.extend({
   addingNew: false,
-  newTodo: '',
+  newTodo: {},
   // list: this.get('list'),
   // newTodo: '',
   actions: {
@@ -11,20 +11,15 @@ export default Component.extend({
     },
     cancel () {
       this.toggleProperty('addingNew')
-      this.set('title', '')
-      this.set('details', '')
+      this.set('newTodo', {})
     },
     addNewTodo () {
-      this.set('newTodo', this.get('store').createRecord('todo', {}))
-      this.set('newTodo.title', this.get('title'))
-      this.set('newTodo.details', this.get('details'))
       this.set('newTodo.list', this.get('list'))
       this.set('newTodo.done', false)
       this.set('addingNew', false)
       console.log(this.get('newTodo'))
       this.sendAction('addNewTodo', this.get('newTodo'))
-      this.set('title', '')
-      this.set('details', '')
+      this.set('newTodo', {})
     }
   }
 })

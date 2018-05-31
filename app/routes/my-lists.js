@@ -1,23 +1,15 @@
 import Route from '@ember/routing/route'
-import Ember from 'ember'
+// import Ember from 'ember'
 import { inject as service } from '@ember/service'
 import { alias } from '@ember/object/computed'
 
 export default Route.extend({
   auth: service(),
   user: alias('auth.credentials.id'),
+  newTodoTemp: '',
   model () {
     // return this.get('user')
-    return Ember.RSVP.hash({
-      user_lists: this.store.findRecord('user', this.get('user')),
-      lister: this.store.findAll('list'),
-      filteredList: this.store.findAll('list')
-               .then(results => results.filter((list) => {
-                 return list.get('user_id') === this.get('user')
-               })),
-      todoer: this.store.findAll('todo')
-      // newList: this.get('store').createRecord('list', {})
-    })
+    return this.store.findRecord('user', this.get('user'))
   },
   actions: {
     addNewList (list) {
@@ -30,7 +22,8 @@ export default Route.extend({
             this.get('flashMessages')
               .success('You made a list!')
           })
-          .catch(() => {
+          .catch((list) => {
+            // this.rollbackAttributes()
             this.get('flashMessages')
               .danger('There was a problem. Please try again.')
           })
@@ -44,10 +37,19 @@ export default Route.extend({
         .then(() => this.get('flashMessages').success('Edited!'))
         .catch(() => this.get('flashMessages').danger('Edit failed'))
     },
-    addNewTodo (todo) {
+    addNewTodo (newTodo) {
+      let todo
+      if (newTodo.title && newTodo.details) {
+        console.log(newTodo)
+        this.set('newTodoTemp', newTodo)
+        todo = this.get('store').createRecord('todo', this.get('newTodoTemp'))
+      } else {
+        todo = this.get('store').createRecord('todo', {})
+      }
       console.log('route level:', todo)
       todo.save()
           .then(() => {
+            console.log('first then')
             todo.set('addingNew', false)
           })
           .then(() => {
@@ -55,6 +57,11 @@ export default Route.extend({
               .success('You made a Todo!')
           })
           .catch(() => {
+            todo.destroyRecord()
+            console.log('It\'s fucked')
+            // todo.rollbackAttributes()
+            // this.get('model').reload()
+            this.set('newTodoTemp', '')
             this.get('flashMessages')
               .danger('There was a problem. Please try again.')
           })

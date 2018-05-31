@@ -1,5 +1,9 @@
 {{!-- {{model}} --}}
+
 {{my-new-list store=store list=list addNewList='addNewList'}}
-{{#each model.user_lists.lists as |list|}}
-  {{single-list list=list store=store deleteList='deleteList' submit='submit' addNewTodo='addNewTodo' todoDone='todoDone' deleteTodo='deleteTodo'}}
+{{#if model.isEmpty}}
+<p style="margin-top:30px">You don't have any tasks!</p>
+{{/if}}
+{{#each model.lists as |list|}}
+  {{single-list list=list deleteList='deleteList' submit='submit' addNewTodo='addNewTodo' todoDone='todoDone' deleteTodo='deleteTodo'}}
 {{/each}}

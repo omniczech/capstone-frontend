@@ -8,7 +8,7 @@
   {{#if list.isEmpty}}
     <p>This list is empty! Click below to start adding todos</p>
   {{/if}}
-  {{my-new-todo list=list store=store addNewTodo='addNewTodo'}}
+  {{my-new-todo list=list addNewTodo='addNewTodo'}}
   {{#if list.isEmpty}}
     {{delete-list deleteList='deleteList' list=list}}
   {{/if}}

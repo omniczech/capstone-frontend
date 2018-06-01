@@ -13,7 +13,7 @@ export default Route.extend({
   },
   actions: {
     addNewList (list) {
-      console.log('route level:', list)
+      // console.log('route level:', list)
       list.save()
           .then(() => {
             list.set('addingNew', false)
@@ -40,16 +40,16 @@ export default Route.extend({
     addNewTodo (newTodo) {
       let todo
       if (newTodo.title && newTodo.details) {
-        console.log(newTodo)
+        // console.log(newTodo)
         this.set('newTodoTemp', newTodo)
         todo = this.get('store').createRecord('todo', this.get('newTodoTemp'))
       } else {
         todo = this.get('store').createRecord('todo', {})
       }
-      console.log('route level:', todo)
+      // console.log('route level:', todo)
       todo.save()
           .then(() => {
-            console.log('first then')
+            // console.log('first then')
             todo.set('addingNew', false)
             todo.set('newTodo', {})
           })
@@ -59,7 +59,7 @@ export default Route.extend({
           })
           .catch(() => {
             todo.destroyRecord()
-            console.log('It\'s fucked')
+            // console.log('It\'s fucked')
             // todo.rollbackAttributes()
             // this.get('model').reload()
             this.set('newTodoTemp', '')
@@ -68,7 +68,7 @@ export default Route.extend({
           })
     },
     todoDone (todo) {
-      console.log(todo.get('done'))
+      // console.log(todo.get('done'))
       todo.toggleProperty('done')
       todo.save()
         .then(() => {

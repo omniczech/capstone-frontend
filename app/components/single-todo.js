@@ -7,7 +7,7 @@ export default Component.extend({
   completed: alias('todo.done'),
   actions: {
     todoDone () {
-      console.log('Single todo', this.get('todo'))
+      // console.log('Single todo', this.get('todo'))
       this.sendAction('todoDone', this.get('todo'))
     },
     deleteTodo () {

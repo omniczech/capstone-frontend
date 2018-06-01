@@ -13,16 +13,16 @@ export default Route.extend({
     createTeam (team) {
       team.save()
         .then((team) => {
-          console.log('user', this.get('user'))
-          console.log('Team', team.get('id'))
+          // console.log('user', this.get('user'))
+          // console.log('Team', team.get('id'))
           // let user = this.get('currentUser.user')
-          // console.log('++++ ' + user.get('username'))
+          // // console.log('++++ ' + user.get('username'))
           // const user = this.get('currentUser')
           this.set('newUserTeam', this.get('store').createRecord('userteam', {}))
           this.set('newUserTeam.user', this.get('user'))
           this.set('newUserTeam.team', team)
           this.get('newUserTeam').save()
-          // console.log(sendable)
+          // // console.log(sendable)
           // sendable.save()
         })
     }

@@ -1,4 +1,41 @@
 @import "ember-bootstrap/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i');
+
+body {
+  background: #DBDBDA;
+  font-family: 'Montserrat', sans-serif;
+  transition: .25s;
+}
+
+.navbar {
+  background: #0A162B;
+  border-color: #0E1E47;
+  border-radius: 0 0 5px 5px
+}
+
+.navbar-default .navbar-brand {
+  font-weight: 900;
+  color: #ED8209;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand,
+.navbar li {
+  color: #fff;
+  transition: 0.25s;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-brand:hover {
+  color: #ED8209;
+}
 
 .list {
   margin-top: 15px;
@@ -20,10 +57,12 @@
     // -ms-linear-gradient(rgba(0, 0, 255, 0.3) 1px, transparent 0);
   -webkit-background-size: 100% 1em;
   -moz-background-size: 100% 1em;
+  box-shadow: 1px 1px 2px #666;
 
   hr {
     background: transparent;
     border: none;
+    margin: 10px;
   }
 
   &:last-of-type {
@@ -48,13 +87,28 @@ input {
   margin-bottom: 10px;
 }
 
+h3 {
+  font-weight: 900;
+}
+
 .editable {
   cursor: pointer;
-  transition: .25s;
+  transition: 0.25s;
   display: inline;
+
+  &:after {
+    // content: ' edit';
+    font-size: 12px;
+    opacity: 0;
+  }
 
   &:hover {
     border-bottom: 3px solid black;
+
+    &:after {
+      opacity: 1
+    }
+
   }
 }
 
